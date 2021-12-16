@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dad Joke Library</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Let's add some dad jokes to the database!</h1>
+        <form action='/api/jokes' method="post">
+            <label for="title">Joke Title</label>
+            <input type="text" id="title" name="title">
+            <label for="description">Description</label>
+            <textarea id="description" name="description"></textarea>
+            <button type="submit">Add that joke!</button>
+        </form>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "dad-joke-test",
+  "version": "1.0.0",
+  "description": "This is a server to update my database of dad jokes. This is used for a personal project.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "tyler-baker",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.1.2"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
