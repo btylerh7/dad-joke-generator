@@ -5,7 +5,6 @@ dotenv.config()
 
 const app = express()
 app.use(express.urlencoded({extended: true}))
-const port = process.env.port || 3000
 const myDb = process.env.MONGO_URI
 mongoose.connect(myDb,{ useNewUrlParser: true, useUnifiedTopology: true })
 
