@@ -1,10 +1,12 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
+const cors = require('cors')
 dotenv.config()
 
 const app = express()
 app.use(express.urlencoded({extended: true}))
+app.use(cors())
 const myDb = process.env.MONGO_URI
 mongoose.connect(myDb,{ useNewUrlParser: true, useUnifiedTopology: true })
 
