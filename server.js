@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const cors = require('cors')
+const { response } = require('express')
 dotenv.config()
 
 const app = express()
@@ -33,6 +34,33 @@ app.get('/api/jokes', (req, res) => {
             console.log(err)
             res.json({err: "Some type of error happened."})
         }) 
+})
+
+app.get('/api/jokes/:id', (req, res) => {
+    let id = req.params.id
+    Joke.findOne({_id: id})
+        .then(response => {
+            res.send({
+                _id: response._id,
+                title: response.title,
+                description: response.description
+            })
+        })
+})
+app.get('/api/random', (req, res) => {
+    Joke.find()
+        .then(data => {
+            let limit = data.length
+            let randomNumber = Math.floor(Math.random() * limit)
+            let randomId = data[randomNumber]._id
+            res.redirect(`/api/jokes/${randomId}`)
+
+        })
+        .catch(err => {
+            console.log(err)
+            res.json({err: "Something went wrong"})
+        })
+
 })
 
 // App post routes
